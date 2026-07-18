@@ -178,7 +178,7 @@ Dark Background: #0f172a
 ```
 
 ### Key Contact Information:
-- Phone: +1 (555) 123-4567
+- Phone: +1 (520)-481-581
 - Email: info@nits-system.com
 - Address: 123 Medical Center Drive, Healthcare City, HC 12345
 
