@@ -1,590 +1,365 @@
-/* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #1e40af;
-    --secondary-color: #0f766e;
-    --accent-color: #dc2626;
-    --light-bg: #f0f9ff;
-    --dark-bg: #0f172a;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --border-color: #e5e7eb;
-    --success-color: #10b981;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Navigation Bar */
-.navbar {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: white;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.nav-links a:hover {
-    color: var(--light-bg);
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    padding: 100px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-}
-
-.hero-content {
-    flex: 1;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.tagline {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--light-bg);
-}
-
-.description {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.btn {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-}
-
-.btn-primary {
-    background-color: var(--accent-color);
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #b91c1c;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
-}
-
-.btn-secondary {
-    background-color: white;
-    color: var(--primary-color);
-}
-
-.btn-secondary:hover {
-    background-color: var(--light-bg);
-    transform: translateY(-2px);
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.device-icon {
-    font-size: 10rem;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-/* Sections */
-.section {
-    padding: 80px 20px;
-}
-
-.section-alt {
-    background-color: var(--light-bg);
-}
-
-.section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.section-intro {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-/* Features Grid */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.feature-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.feature-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.feature-card p {
-    color: var(--text-light);
-}
-
-/* Comparison Table */
-.comparison-table {
-    margin-top: 3rem;
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-thead {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-th, td {
-    padding: 1.5rem;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-}
-
-th {
-    font-weight: 600;
-}
-
-tbody tr:hover {
-    background-color: var(--light-bg);
-}
-
-tbody tr:last-child td {
-    border-bottom: none;
-}
-
-/* Results Grid */
-.results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.result-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid var(--accent-color);
-}
-
-.result-card h3 {
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-bottom: 0.5rem;
-}
-
-.result-card p {
-    color: var(--text-light);
-    font-size: 1rem;
-}
-
-/* Professionals Content */
-.professionals-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.prof-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.prof-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.prof-card ul {
-    list-style-position: inside;
-    color: var(--text-light);
-}
-
-.prof-card li {
-    margin-bottom: 0.5rem;
-    padding-left: 0.5rem;
-}
-
-/* Testimonials */
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.testimonial-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid var(--success-color);
-}
-
-.stars {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.testimonial-card p {
-    color: var(--text-light);
-    margin-bottom: 1rem;
-    font-style: italic;
-}
-
-.testimonial-card h4 {
-    color: var(--primary-color);
-}
-
-/* FAQ */
-.faq-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.faq-item {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.faq-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.faq-item p {
-    color: var(--text-light);
-    line-height: 1.8;
-}
-
-/* Contact Section */
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin-top: 3rem;
-}
-
-.contact-form {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form h3 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 0.9rem;
-}
-
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
-}
-
-.contact-form button {
-    width: 100%;
-}
-
-.contact-info {
-    background: var(--light-bg);
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.contact-info h3 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-}
-
-.info-item {
-    margin-bottom: 2rem;
-}
-
-.info-item h4 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.info-item p {
-    color: var(--text-light);
-}
-
-/* Footer */
-.footer {
-    background-color: var(--dark-bg);
-    color: white;
-    padding: 3rem 20px 1rem;
-    margin-top: 3rem;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.footer-section h4 {
-    margin-bottom: 1rem;
-    color: var(--light-bg);
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-section a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section a:hover {
-    color: white;
-}
-
-.footer-section p {
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.8;
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 2rem;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        gap: 1rem;
-        font-size: 0.8rem;
-    }
-
-    .hero {
-        flex-direction: column;
-        padding: 60px 20px;
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .tagline {
-        font-size: 1.2rem;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-    }
-
-    .device-icon {
-        font-size: 6rem;
-    }
-
-    .section {
-        padding: 50px 20px;
-    }
-
-    .section h2 {
-        font-size: 2rem;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-
-    table {
-        font-size: 0.9rem;
-    }
-
-    th, td {
-        padding: 1rem;
-    }
-
-    .hero-content {
-        flex: 1;
-    }
-
-    .hero-image {
-        flex: 1;
-    }
-}
-
-@media (max-width: 600px) {
-    .nav-links {
-        gap: 0.5rem;
-        font-size: 0.7rem;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .tagline {
-        font-size: 1rem;
-    }
-
-    .section h2 {
-        font-size: 1.5rem;
-    }
-
-    .feature-icon {
-        font-size: 2rem;
-    }
-
-    .result-card h3 {
-        font-size: 2rem;
-    }
-
-    .device-icon {
-        font-size: 4rem;
-    }
-
-    .features-grid,
-    .results-grid,
-    .testimonials-grid,
-    .faq-grid,
-    .professionals-content {
-        grid-template-columns: 1fr;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NITS - Neuro-Oncological Integrated Treatment System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><span class="nits-title">NITS - Neuro-Oncological Integrated Treatment System</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#professionals">For Professionals</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Where Time Meets Innovation/?</h1>
+            <p class="tagline">Advanced Cancer Treatment. Completed by Noon.</p>
+            <p class="description">NITS combines all medical imaging devices into one integrated system, delivering faster results without compromising care.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Book a Consultation</button>
+                <button class="btn btn-secondary">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="device-icon">🏥</div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <h2>How NITS Works</h2>
+            <p class="section-intro">Revolutionary integration of multiple medical imaging technologies into one powerful system.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Integrated Technology</h3>
+                    <p>Combines X-ray, CT, MRI, and Angiogram capabilities into a single, unified machine.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-Time Imaging</h3>
+                    <p>Simultaneous multi-modal imaging provides instant, comprehensive diagnostic data.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Precision Treatment</h3>
+                    <p>Target tumors with unprecedented accuracy, minimizing damage to healthy tissue.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Rapid Results</h3>
+                    <p>Complete diagnosis and treatment planning within hours, not days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traditional vs NITS Comparison -->
+    <section id="benefits" class="section section-alt">
+        <div class="container">
+            <h2>Traditional vs. NITS</h2>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Traditional Approach</th>
+                            <th>NITS System</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Treatment Time</strong></td>
+                            <td>Full day (8+ hours)</td>
+                            <td><strong>By Noon ⏱️</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Imaging Devices</strong></td>
+                            <td>Multiple separate machines</td>
+                            <td><strong>One integrated device</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Radiation Exposure</strong></td>
+                            <td>Multiple exposures</td>
+                            <td><strong>Minimized exposure</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Patient Discomfort</strong></td>
+                            <td>Multiple transfers & waits</td>
+                            <td><strong>Single session comfort</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Treatment Precision</strong></td>
+                            <td>Standard accuracy</td>
+                            <td><strong>Enhanced precision</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hospital Resources</strong></td>
+                            <td>Multiple departments</td>
+                            <td><strong>Consolidated efficiency</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Patient Recovery</strong></td>
+                            <td>Extended recovery</td>
+                            <td><strong>Faster recovery</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinical Results Section -->
+    <section id="results" class="section">
+        <div class="container">
+            <h2>Clinical Results</h2>
+            <p class="section-intro">Proven outcomes and measurable benefits from NITS implementation.</p>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>75%</h3>
+                    <p>Reduction in Treatment Time</p>
+                </div>
+                <div class="result-card">
+                    <h3>90%</h3>
+                    <p>Improvement in Precision Targeting</p>
+                </div>
+                <div class="result-card">
+                    <h3>60%</h3>
+                    <p>Decrease in Radiation Exposure</p>
+                </div>
+                <div class="result-card">
+                    <h3>95%</h3>
+                    <p>Patient Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Professionals Section -->
+    <section id="professionals" class="section section-alt">
+        <div class="container">
+            <h2>For Medical Professionals</h2>
+            <p class="section-intro">Technical specifications and professional insights into NITS capabilities.</p>
+            
+            <div class="professionals-content">
+                <div class="prof-card">
+                    <h3>Advanced Imaging Integration</h3>
+                    <ul>
+                        <li>Real-time multi-modal imaging (X-ray, CT, MRI, Angiogram)</li>
+                        <li>Synchronized data acquisition and processing</li>
+                        <li>AI-assisted image analysis and tumor mapping</li>
+                        <li>Reduced patient motion artifacts</li>
+                    </ul>
+                </div>
+                <div class="prof-card">
+                    <h3>Treatment Planning</h3>
+                    <ul>
+                        <li>3D tumor visualization and volumetric analysis</li>
+                        <li>Automated treatment parameter optimization</li>
+                        <li>Real-time adaptive therapy adjustments</li>
+                        <li>Enhanced surgeon/oncologist collaboration tools</li>
+                    </ul>
+                </div>
+                <div class="prof-card">
+                    <h3>Patient Safety & Quality</h3>
+                    <ul>
+                        <li>Comprehensive dose monitoring and optimization</li>
+                        <li>Automated quality assurance protocols</li>
+                        <li>Detailed treatment documentation and traceability</li>
+                        <li>Compliance with international medical standards</li>
+                    </ul>
+                </div>
+                <div class="prof-card">
+                    <h3>Operational Benefits</h3>
+                    <ul>
+                        <li>Increased patient throughput</li>
+                        <li>Reduced equipment maintenance costs</li>
+                        <li>Streamlined workflow and scheduling</li>
+                        <li>Better resource allocation for hospitals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2>Patient Testimonials</h2>
+            <p class="section-intro">Real stories from patients whose lives were changed by NITS.</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"I was terrified about spending an entire day in the hospital. With NITS, I was done by noon and back home with my family. The precision and speed gave me confidence in my [...]
+                    <h4>- Sarah M., Patient</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"As an oncologist, NITS has transformed how I treat my patients. The integrated imaging and real-time data allow me to make better treatment decisions faster. My patients a[...]
+                    <h4>- Dr. James L., Oncologist</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"The efficiency is remarkable. We've increased our patient capacity by 40% while maintaining the highest quality of care. NITS is a game-changer for our facility."</p>
+                    <h4>- Dr. Patricia R., Hospital Administrator</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section section-alt">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is NITS?</h3>
+                    <p><span class="nits-title">NITS (Neuro-Oncological Integrated Treatment System)</span> is an advanced medical device that combines multiple imaging technologies (X-ray, CT, MRI, Angiogram) into one unified [...]
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3>How fast is NITS treatment?</h3>
+                    <p>Most patients complete their treatment by noon, compared to a full day (8+ hours) with traditional methods. This includes diagnosis, imaging, treatment planning, and the pr[...]
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is NITS safe?</h3>
+                    <p>Yes. NITS actually reduces radiation exposure compared to traditional methods that require multiple separate imaging devices. The integrated system is designed with patient[...]
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3>Will NITS hurt?</h3>
+                    <p>NITS procedures are minimally invasive and designed for patient comfort. Most patients experience minimal discomfort, and many report it's less stressful than traditional m[...]
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3>How is NITS different from traditional cancer treatment?</h3>
+                    <p>Traditional cancer treatment often requires multiple appointments, multiple devices, and extended hospital stays. NITS consolidates everything into one efficient session wi[...]
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can my hospital get NITS?</h3>
+                    <p>Yes! NITS is available for hospital integration. We work with medical facilities to implement the system and train staff. Contact us for facility consultation and partnersh[...]
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3>What cancers can NITS treat?</h3>
+                    <p>NITS is particularly effective for neuro-oncological cases (brain and spinal tumors) but can be adapted for various cancer types. Your medical team will determine if NITS i[...]
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I schedule a NITS consultation?</h3>
+                    <p>Contact us through our website or call our patient coordinator. We'll connect you with a medical professional who can evaluate your condition and discuss whether NITS is th[...]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get Started Today</h2>
+            <p class="section-intro">Schedule your consultation or learn more about NITS for your facility.</p>
+            
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Contact Us</h3>
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone">
+                        <select required>
+                            <option value="">Select an option...</option>
+                            <option value="patient">I'm a Patient</option>
+                            <option value="professional">I'm a Medical Professional</option>
+                            <option value="facility">I Represent a Facility</option>
+                        </select>
+                        <textarea placeholder="Your Message" rows="5"></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <h4>📞 Phone</h4>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>📧 Email</h4>
+                        <p>info@nits-system.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>🏢 Address</h4>
+                        <p>123 Medical Center Drive<br>Healthcare City, HC 12345</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>⏰ Hours</h4>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>NITS System</h4>
+                    <p>Advanced cancer treatment. Completed by noon.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#results">Results</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NITS - Neuro-Oncological Integrated Treatment System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
